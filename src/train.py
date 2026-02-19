@@ -3,7 +3,6 @@ import joblib
 import mlflow
 import mlflow.catboost
 import pandas as pd
-import numpy as np
 from catboost import CatBoostClassifier, Pool
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, roc_auc_score, roc_curve
@@ -62,8 +61,9 @@ with mlflow.start_run():
 
     # Save model
     os.makedirs("models", exist_ok=True)
-    joblib.dump(model, 'MODEL_PATH')
-    # model.save_model(MODEL_PATH)
+
+    joblib.dump(model, MODEL_PATH)
+    
     mlflow.catboost.log_model(model, "catboost_model")
 
 print(f"Training finished. Accuracy: {acc:.4f}, AUC: {auc:.4f}")

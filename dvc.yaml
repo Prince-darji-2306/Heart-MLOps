@@ -6,4 +6,3 @@ stages:
       - src/train.py
     outs:
       - models/catboost_model.pkl
-      - mlruns/

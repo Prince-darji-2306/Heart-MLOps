@@ -1,0 +1,23 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python src/train.py
+    deps:
+    - path: data/train.csv
+      hash: md5
+      md5: c7bfa482384621ef7a6351daf2eb33f7
+      size: 2452090
+    - path: src/train.py
+      hash: md5
+      md5: 045b3e3d02f27a1c680247b0a76d1669
+      size: 1812
+    outs:
+    - path: mlruns/
+      hash: md5
+      md5: 9119c2c2d9c4be9c3ce8f7443bdf0424.dir
+      size: 253591
+      nfiles: 5
+    - path: models/catboost_model.pkl
+      hash: md5
+      md5: 5795caff4e983c70595d8e8a938dc5c0
+      size: 343150
