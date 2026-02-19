@@ -1,5 +1,0 @@
-outs:
-- md5: 87b86de1ebc0e7372271ca9eccfa6074
-  size: 3656295
-  hash: md5
-  path: catboost_model.pkl
