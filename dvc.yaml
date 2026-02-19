@@ -1,0 +1,9 @@
+stages:
+  train:
+    cmd: python src/train.py
+    deps:
+      - data/heart.csv
+      - src/train.py
+    outs:
+      - models/catboost_model.pkl
+      - mlruns/
