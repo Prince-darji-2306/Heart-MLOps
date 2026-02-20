@@ -29,8 +29,8 @@ valid_pool = Pool(X_valid, y_valid)
 params = {
     "iterations": 2000,
     "learning_rate": 0.05,
-    "depth": 5,
-    "l2_leaf_reg": 8,
+    "depth": 2,
+    "l2_leaf_reg": 15,
     "loss_function": "Logloss",
     "eval_metric": "AUC",
     "random_seed": 42,
