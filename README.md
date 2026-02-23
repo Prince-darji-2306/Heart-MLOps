@@ -7,6 +7,9 @@ This repository demonstrates a complete end-to-end MLOps pipeline for predicting
 ## 🚀 Live Demo
 Access the application here: [Predict Heart Disease](https://heart-mlops.streamlit.app/)
 
+Access Competition Code : [Competition.ipynb]
+(https://github.com/Prince-darji-2306/Heart-MLOps/blob/main/notebook/competition.ipynb)
+
 ## 🛠️ Tech Stack
 -   **Model**: [CatBoost](https://catboost.ai/) (Gradient Boosting on Decision Trees)
 -   **Experiment Tracking**: [MLflow](https://mlflow.org/)
