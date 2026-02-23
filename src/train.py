@@ -11,6 +11,7 @@ from sklearn.metrics import accuracy_score, roc_auc_score
 # Paths
 DATA_PATH = "data/train.csv"
 MODEL_PATH = "models/catboost_model.pkl"
+PROD_PATH = "models/catboost_model_prod.pkl"
 
 # Load dataset
 df = pd.read_csv(DATA_PATH)
@@ -30,8 +31,8 @@ valid_pool = Pool(X_valid, y_valid)
 params = {
     "iterations": 2000,
     "learning_rate": 0.05,
-    "depth": 2,
-    "l2_leaf_reg": 15,
+    "depth": 7,
+    "l2_leaf_reg": 11,
     "loss_function": "Logloss",
     "eval_metric": "AUC",
     "random_seed": 42,
@@ -64,6 +65,7 @@ with mlflow.start_run():
     os.makedirs("models", exist_ok=True)
 
     joblib.dump(model, MODEL_PATH)
+    joblib.dump(model, PROD_PATH)
     
     mlflow.catboost.log_model(model, "catboost_model")
     run_id = mlflow.active_run().info.run_id
