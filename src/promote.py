@@ -47,8 +47,8 @@ def promote_if_better(new_auc, run_id):
         else:
             print("New model is NOT better. Keeping current production.")
 
-    except Exception:
-        print(Exception)
+    except Exception as e:
+        print(e)
         # No production model exists yet
         print("No production model found. Registering first model...")
 
