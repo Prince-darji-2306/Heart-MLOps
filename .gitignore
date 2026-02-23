@@ -1,5 +1,6 @@
 data/*
 !data/*.dvc
+!data/train.csv
 
 mlruns/*
 !mlruns/*.dvc
