@@ -1,9 +1,9 @@
 data/*
 !data/*.dvc
 
-models/*
-!models/*.dvc
-
 mlruns/*
 !mlruns/*.dvc
 /mlruns
+__pycache__
+app/__pycache__
+src/__pycache__
