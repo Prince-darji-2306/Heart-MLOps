@@ -5,8 +5,8 @@ stages:
     deps:
     - path: data/train.csv
       hash: md5
-      md5: c7bfa482384621ef7a6351daf2eb33f7
-      size: 2452090
+      md5: 37cee89dac11294c79f3eb5fe7245264
+      size: 2451862
     - path: src/train.py
       hash: md5
       md5: d8c306fd64f4a68209ad8b8c2daf2fcc
@@ -14,5 +14,5 @@ stages:
     outs:
     - path: models/catboost_model.pkl
       hash: md5
-      md5: 8a6a99b41b9b65b63748e3665aa7fcbe
-      size: 266790
+      md5: 726b03eb7b4a0c839a6e83204cbda588
+      size: 218005

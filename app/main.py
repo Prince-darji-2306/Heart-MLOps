@@ -14,7 +14,7 @@ import pandas as pd
 #     f"models:/{MODEL_NAME}@production"
 # )
 
-model = joblib.load("models/catboost_model.pkl")
+model = joblib.load("models/catboost_model_prod.pkl")
 
 st.title("❤️ Heart Disease Prediction App")
 

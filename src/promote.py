@@ -26,6 +26,7 @@ def promote_if_better(new_auc, run_id):
         print(f"New Model AUC: {new_auc}")
 
         if new_auc > prod_auc:
+            print(new_auc, prod_auc)
             print("New model is better. Promoting...")
 
             git_push()
@@ -52,17 +53,17 @@ def promote_if_better(new_auc, run_id):
         # No production model exists yet
         print("No production model found. Registering first model...")
 
-        # mv = client.create_model_version(
-        #     name=MODEL_NAME,
-        #     source=f"runs:/{run_id}/catboost_model",
-        #     run_id=run_id
-        # )
+        mv = client.create_model_version(
+            name=MODEL_NAME,
+            source=f"runs:/{run_id}/catboost_model",
+            run_id=run_id
+        )
 
-        # client.set_registered_model_alias(
-        #     MODEL_NAME, "production", mv.version
-        # )
+        client.set_registered_model_alias(
+            MODEL_NAME, "production", mv.version
+        )
 
-        # print("First model registered as production.")
+        print("First model registered as production.")
 
 def git_push():
     try:
@@ -78,7 +79,7 @@ def git_push():
         # Push
         subprocess.run(["git", "push", "origin", "main"], check=True)
 
-        print("Changes committed and pushed successfully 🚀")
+        print("Changes committed and pushed successfully ")
 
     except subprocess.CalledProcessError as e:
         print("Git operation failed:", e)
