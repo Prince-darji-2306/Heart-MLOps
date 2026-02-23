@@ -3,9 +3,10 @@ import joblib
 import mlflow
 import mlflow.catboost
 import pandas as pd
+from promote import promote_if_better
 from catboost import CatBoostClassifier, Pool
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, roc_auc_score, roc_curve
+from sklearn.metrics import accuracy_score, roc_auc_score
 
 # Paths
 DATA_PATH = "data/train.csv"
@@ -65,5 +66,7 @@ with mlflow.start_run():
     joblib.dump(model, MODEL_PATH)
     
     mlflow.catboost.log_model(model, "catboost_model")
+    run_id = mlflow.active_run().info.run_id
+    promote_if_better(auc, run_id)
 
 print(f"Training finished. Accuracy: {acc:.4f}, AUC: {auc:.4f}")
