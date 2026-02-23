@@ -1,6 +1,6 @@
 import joblib
 import streamlit as st
-import mlflow
+# import mlflow
 # import mlflow.pyfunc
 import pandas as pd
 
