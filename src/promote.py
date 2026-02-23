@@ -48,20 +48,21 @@ def promote_if_better(new_auc, run_id):
             print("New model is NOT better. Keeping current production.")
 
     except Exception:
+        print(Exception)
         # No production model exists yet
         print("No production model found. Registering first model...")
 
-        mv = client.create_model_version(
-            name=MODEL_NAME,
-            source=f"runs:/{run_id}/catboost_model",
-            run_id=run_id
-        )
+        # mv = client.create_model_version(
+        #     name=MODEL_NAME,
+        #     source=f"runs:/{run_id}/catboost_model",
+        #     run_id=run_id
+        # )
 
-        client.set_registered_model_alias(
-            MODEL_NAME, "production", mv.version
-        )
+        # client.set_registered_model_alias(
+        #     MODEL_NAME, "production", mv.version
+        # )
 
-        print("First model registered as production.")
+        # print("First model registered as production.")
 
 def git_push():
     try:

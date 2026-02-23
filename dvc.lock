@@ -9,10 +9,10 @@ stages:
       size: 2452090
     - path: src/train.py
       hash: md5
-      md5: 69285203f22960032d239f1352dc7ccf
+      md5: d8c306fd64f4a68209ad8b8c2daf2fcc
       size: 1976
     outs:
     - path: models/catboost_model.pkl
       hash: md5
-      md5: 36cba159ceae9309e757fa0ef85876c8
-      size: 635742
+      md5: 8a6a99b41b9b65b63748e3665aa7fcbe
+      size: 266790
